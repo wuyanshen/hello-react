@@ -14,6 +14,11 @@ class App extends Component {
         </div>
         <div className="row">
           <div className="col-xs-1 col-xs-offset-11">
+          <h1>hello world！！</h1>
+          </div>
+        </div>
+        <div className="row">
+          <div className="col-xs-1 col-xs-offset-11">
             <Home/>
           </div>
         </div>
