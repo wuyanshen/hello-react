@@ -6,3 +6,12 @@
 ## 3.启动React项目
     cd hello-react
     npm start
+
+```
+echo "# react-app" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/wuyanshen/react-app.git
+git push -u origin master
+```
