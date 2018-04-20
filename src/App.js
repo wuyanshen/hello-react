@@ -44,6 +44,7 @@ class App extends Component {
               initialAge={22} 
               user={user} 
               greet={this.onGreet}
+              initailName={this.state.homeLink}
             >
               <p>我是子节点</p>
             </Home>
