@@ -5,6 +5,10 @@ import Home from './components/Home';
 
 class App extends Component {
   render() {
+    const user={
+      name:"Xiao hong",
+      hobbies:["Sports","Reading"]
+    }
     return (
       <div className="container">
         <div className="row">
@@ -19,7 +23,9 @@ class App extends Component {
         </div>
         <div className="row">
           <div className="col-xs-1 col-xs-offset-11">
-            <Home/>
+            <Home name={"Xiao Ming"} initialAge={22} user={user}>
+              <p>我是子节点</p>
+            </Home>
           </div>
         </div>
       </div>
