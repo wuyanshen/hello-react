@@ -4,6 +4,21 @@ import Header from './components/Header';
 import Home from './components/Home';
 
 class App extends Component {
+  constructor(){
+    super();
+    this.state={
+      homeLink:"Home"
+    }
+  }
+  onGreet(age){
+    alert(age);
+  }
+
+  onChangeLinkName(newName){
+    this.setState({
+      homeLink:newName
+    })
+  }
   render() {
     const user={
       name:"Xiao hong",
@@ -13,7 +28,7 @@ class App extends Component {
       <div className="container">
         <div className="row">
           <div className="col-xs-1 col-xs-offset-11">
-            <Header/>
+            <Header homeLink={this.state.homeLink}/>
           </div>
         </div>
         <div className="row">
@@ -23,7 +38,13 @@ class App extends Component {
         </div>
         <div className="row">
           <div className="col-xs-1 col-xs-offset-11">
-            <Home name={"Xiao Ming"} initialAge={22} user={user}>
+            <Home 
+              changLink={this.onChangeLinkName.bind(this)}
+              name={"Xiao Ming"} 
+              initialAge={22} 
+              user={user} 
+              greet={this.onGreet}
+            >
               <p>我是子节点</p>
             </Home>
           </div>

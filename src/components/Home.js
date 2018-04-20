@@ -6,7 +6,8 @@ export default class Home extends Component{
 		super(props);
 		this.state={
 			age:props.initialAge,
-			status:0
+			status:0,
+			homeLink:"changed link"
 		}
 		setTimeout(()=>{
 			this.setState({
@@ -20,6 +21,14 @@ export default class Home extends Component{
 			age:this.state.age+3
 		})
 		console.log(this);
+	}
+
+	handleGreet(){
+		this.props.greet(this.state.age)
+	}
+
+	onChangeLink(){
+		this.props.changLink(this.state.homeLink)
 	}
 
 	render(){
@@ -49,6 +58,10 @@ export default class Home extends Component{
             		<div>
             			{this.props.children}
             		</div>
+            		<hr/>
+            		<button onClick={this.handleGreet.bind(this)} className="btn btn-primary">我是按钮</button>
+		          	<hr/>
+		          	<button onClick={this.onChangeLink.bind(this)} className="btn btn-primary">Change Header Link</button>
 		          </div>
 		        </div>
 			</div>
@@ -60,5 +73,6 @@ Home.propTypes={
 	name:PropTypes.string,
 	age:PropTypes.number,
 	user:PropTypes.object,
-	children:PropTypes.element.isRequired
+	children:PropTypes.element.isRequired,
+	greet:PropTypes.func
 }
