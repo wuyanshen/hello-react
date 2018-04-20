@@ -8,6 +8,8 @@
     npm start
 
 ```
+git操作
+
 echo "# react-app" >> README.md
 git init
 git add README.md
